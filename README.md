@@ -1,32 +1,48 @@
-# dBug
-- Updated for PSR-4 copmliance
-- created composer package
+### Work done by repat
+* Update PSR-4 compliance
+* Facade, ServiceProvider, DBugHelper for Laravel 5.1.x
+* Update README
 
-## NEW
-- Updated to version from August 6th, 2012 of Ospinto's code
-- move to psr-4
+### Work done by sunra
+* Updated for PSR-4 compliance
+* created composer package
+* Updated to version from August 6th, 2012 of Ospinto's code
+* move to psr-4
 
+### Install via Composer 
+https://packagist.org/packages/repat/laravel-dbug
 
-## Usage
+`composer require repat/laravel-dbug`
 
-### Twig Filter - https://github.com/sunra/dbug-twig-extension
+Then install Facade and ServiceProvider in `config/app.php`:
 
-or
+```php
+'providers' => [
+// ...
+repat\LaravelDBug\DBugServiceProvider::class,
+// ...
+```
 
-### Install via Composer - https://packagist.org/packages/sunra/dbug
-Class will be autoloaded.
+```php
+'aliases' => [
+// ...
+'dBug'       => repat\LaravelDBug\DBugFacade::class,
+// ...
+```
 
+#### Usage
 
-#### usage 
-``` php
-
-   new \Ospinto\Dbug($myVariable);
+```php
+   dBug::dump($var);
 
 ```
+---
+
+### Original README
 
 #### Class arguments:
 
-    __construct ($var,$forceType="",$bCollapsed=false, $var_name='')
+    __construct ($var, $forceType="", $bCollapsed=false, $var_name='')
 
     $var - variable to dump,
     $bCollapsed - view collapsed
