@@ -1,3 +1,6 @@
+# DEPRECATED
+see https://github.com/repat/laravel-5-dbug for an updated version
+
 ### Work done by repat
 * Update PSR-4 compliance
 * Facade, ServiceProvider, DBugHelper for Laravel 5.1.x
